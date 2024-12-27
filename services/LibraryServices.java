@@ -46,9 +46,9 @@ public class LibraryServices {
         }
     }
 
-    public Book searchBook(String title) {
+    public Book searchBook(String title, String author) {
         for(Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
+            if (book.getTitle().equalsIgnoreCase(title) || book.getAuthor().equalsIgnoreCase(author)) {
                 return book;
             }
         }

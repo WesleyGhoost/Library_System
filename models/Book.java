@@ -1,18 +1,26 @@
 package models;
 
 public class Book {
-    private String title;
     private int id;
-    private String actor;
+    private String title;
+    private String author;
     private int publiYear;
     private boolean status;
 
-    public Book(String title, int id, String actor, int publiYear, boolean status) {
-        this.title = title;
+    public Book(int id, String title, String author, int publiYear, boolean status) {
         this.id = id;
-        this.actor = actor;
+        this.title = title;
+        this.author = author;
         this.publiYear = publiYear;
         this.status = false;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -23,20 +31,12 @@ public class Book {
         this.title = title;
     }
     
-    public int getId() {
-        return this.id;
+    public String getAuthor() {
+        return this.author;
     }
     
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public String getActor() {
-        return this.actor;
-    }
-    
-    public void setActor(String actor) {
-        this.actor = actor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
     
     public int getPubliYear() {
@@ -58,7 +58,7 @@ public class Book {
     @Override
     public String toString() {
         return "Livro " + "{" + "id: " + id + " Título: " + title +
-        " Autor: " + actor + " Ano de publicação: " + publiYear + " Disponível: " + 
+        " Autor: " + author + " Ano de publicação: " + publiYear + " Disponível: " + 
         (status ? "Sim" : "Não");
     }
 }
