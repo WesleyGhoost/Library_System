@@ -28,8 +28,6 @@ public class LibraryServices {
             status = true;
             book.setStatus(status);
             System.out.println("O livro foi emprestado!");
-        } else {
-            System.out.println("Este livro já foi emprestado e não está disponivel");
         }
        }
     }
@@ -37,11 +35,9 @@ public class LibraryServices {
     public void returnBook(int id, boolean status) {
         for(Book book : books) {
          if(book.getId() == id && book.getStatus() == true) {
-             status = false;
-             book.setStatus(status);
-             System.out.println("O livro foi devolvido!");
-         } else {
-             System.out.println("Este livro já foi devolvido");
+            status = false;
+            book.setStatus(status);
+            System.out.println("O livro foi devolvido!");
          }
         }
     }
